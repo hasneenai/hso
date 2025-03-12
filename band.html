@@ -24,6 +24,16 @@
       margin: 0;
     }
 
+    .header h1 a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .header h1 a:hover {
+      color: #ffe0e0;
+    }
+
     .content {
       max-width: 800px;
       margin: 30px auto;
@@ -114,12 +124,30 @@
     .telegram-button:hover {
       background-color: #b90f22;
     }
+
+    .back-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #d31027;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 50%;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .back-top:hover {
+      background-color: #b90f22;
+    }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <h1>دورة باند إنستقرام الشاملة</h1>
+    <h1><a href="https://67d0f23286e1ae8725cff617--snazzy-pie-067db9.netlify.app">دورة باند إنستقرام الشاملة</a></h1>
   </div>
 
   <div class="content">
@@ -157,6 +185,8 @@
     <h3>للتواصل و التسجيل عبر تيليجرام:</h3>
     <a class="telegram-button" href="https://t.me/py_hl" target="_blank">راسلنا على Telegram</a>
   </div>
+
+  <a class="back-top" href="index.html" title="الرجوع إلى الصفحة الرئيسية">&#8679;</a>
 
 </body>
 </html>
