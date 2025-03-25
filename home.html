@@ -8,13 +8,13 @@
   
   <style>
 #sidebar {
-  width: 260px;
-  background-color: #d0e8ff;
+  width: 200px;
+background: linear-gradient(to right, #48C9B0, #1E90FF); /* Light Sea Green to Dodger Blue */
   height: 100vh;
   position: fixed;
   top: 0;
   right: 0;
-  transform: translateX(100%); /* يُخفيه تماماً */
+  transform: translateX(100%);
   transition: transform 0.3s ease;
   padding: 20px;
   z-index: 1000;
@@ -22,13 +22,13 @@
 }
 
 #sidebar.active {
-  transform: translateX(0); /* يظهر عند التفعيل */
+  transform: translateX(0);
 }
 
 .menu-toggle {
   position: fixed;
   top: 20px;
-  right: 10px; /* في أقصى اليمين */
+  right: 10px;
   font-size: 28px;
   cursor: pointer;
   z-index: 1001;
@@ -65,17 +65,17 @@
 }
 
 .sidebar-img {
-  width: 90px !important;    /* استخدام !important لتجاوز التنسيقات الأخرى */
-  height: 90px !important;   /* استخدام !important لتجاوز التنسيقات الأخرى */
+  width: 90px !important;
+  height: 90px !important;
   border-radius: 50%;
   display: block;
   margin: 0 0 20px 0;
-  transform: translateX(-2px); /* الميل لليسار */
+  transform: translateX(-2px);
 }
 
 .sidebar-title {
   text-align: center;
-  margin-top: 20px;       /* لإنزال الاسم أسفل الصورة */
+  margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
 }
@@ -84,45 +84,54 @@
   text-align: center;
   margin-top: 10px;
   font-size: 14px;
-  color: #555;
+  color: #d0e8ff;
 }
 
 .icon-position {
   position: relative;
-  top: 1px; /* لتحريك الـSVG لأعلى */
+  top: 1px;
   left: 1px;
 }
 
 .title {
-  font-family: 'Cairo', sans-serif; /* خط يدعم اللغة العربية */
-  direction: rtl; /* الكتابة من اليمين لليسار */
-  text-align: right; /* محاذاة النص لليمين */
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  text-align: right;
 }
-
-
 
 .sidebar {
   position: relative;
 }
 
-
+/* تصميم خاص لأيقونة التليجرام لمنع التضارب */
+.telegram-icon-position {
+  display: block;
+  width: fit-content;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+}
 </style>
   
   <script>/*<![CDATA[*/function rmurl(e,t){var r=new RegExp(/\?m=0|&m=0|\?m=1|&m=1/g);return r.test(e)&&(e=e.replace(r,""),t&&window.history.replaceState({},document.title,e)),e}const currentUrl=rmurl(location.toString(),!0);/*]]>*/</script>
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
-<link href='https://www2.0zz0.com/2025/03/16/04/474818126.jpg' rel='icon' type='image/x-icon'/>
+<link href='https://i.ibb.co/sJCSXzDB/IMG-20250325-154640-210.webp' rel='icon' type='image/x-icon'/>
 <meta content='' name='description'/>
 <meta content='HSO' property='og:title'/>
 <link href='https://t.me/Botspython3' rel='canonical'/>
 <meta content='https://t.me/Botspython3' property='og:url'/>
 <meta content='' name='og:description'/>
-<meta content='https://www2.0zz0.com/2025/03/16/04/474818126.jpg' property='og:image'/>
+<meta content='https://i.ibb.co/sJCSXzDB/IMG-20250325-154640-210.webp' property='og:image'/>
 <meta content='rian_seo' property='profile:username'/>
 <meta content='summary' name='twitter:card'/>
 <meta content='HSO' name='twitter:title'/>
-<meta content='https://www2.0zz0.com/2025/03/16/04/474818126.jpg' property='twitter:image'/>
+<meta content='https://i.ibb.co/sJCSXzDB/IMG-20250325-154640-210.webp' property='twitter:image'/>
 <meta content='https://t.me/botspython3' name='twitter:url'/>
-<title>HSO</title>
+<title>Python courses </title>
 <link href='https://pro.fontawesome.com/releases/v5.15.0/css/all.css' rel='stylesheet' type='text/css'/>
 <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet' type='text/css'/>
 <link href='https://cdn.jsdelivr.net/gh/rianseo/rianseo.github.io/biolink.min.css' rel='stylesheet' type='text/css'/>
@@ -135,7 +144,7 @@
 * Publisher : temabanua - temabanua.com
 **************************************************/
 .widget_bottom img{box-shadow:0px 6px 14px -6px rgb(24 39 75 / 12%), 0px 10px 32px -4px rgb(24 39 75 / 10%), inset 0px 0px 2px 1px rgb(24 39 75 / 5%)}
-a:link,a:visited,.widget_bottom h3,.widget_bottom p{color: #0D0C22}.bg-rianseo{background: #D3D3D3}.widget_bottom{width:680px}.widget_bottom h3{font:bold 18px Inter, sans-serif}.widget_bottom p,.bioLink-text{font:normal 16px Inter, sans-serif}.bioLink-shadow{border:0 solid #ffffff;background: #black}
+a:link,a:visited,.widget_bottom h3,.widget_bottom p{color: #0D0C22}.bg-rianseo{background: linear-gradient(to right, #40E0D0, #00BFFF); }.widget_bottom{width:680px}.widget_bottom h3{font:bold 18px Inter, sans-serif}.widget_bottom p,.bioLink-text{font:normal 16px Inter, sans-serif}.bioLink-shadow{border:0 solid #ffffff;background: #black}
 @media (max-width:768px){.widget_bottom {width:90%}}.svg-icon-24 {width:32px;height:32px;fill:#0D0C22}.svg-icon-24:hover {fill:#ef5321}.copyright-web .blogger a {font-size:0;display:inline-block}
 
 --></style>
@@ -166,7 +175,7 @@ a:link,a:visited,.widget_bottom h3,.widget_bottom p{color: #0D0C22}.bg-rianseo{b
 <div class='bg-rianseo'></div>
 <div class='widget_bottom section' id='widget_bottom' name='Widget'><div class='widget Image' data-version='2' id='Image1'>
 <div class='widget-content'>
-<img alt='Hassanein Qusay' height='280' id='Image1_img' src='https://www2.0zz0.com/2025/03/16/04/474818126.jpg' width='280'>
+<img alt='Hassanein Qusay' height='280' id='Image1_img' src='https://i.ibb.co/sJCSXzDB/IMG-20250325-154640-210.webp' width='280'>
 </img>
 <div class='widget-flex'>
   <h3 class='title'>Hassanein Qusay </h3>
@@ -212,7 +221,7 @@ a:link,a:visited,.widget_bottom h3,.widget_bottom p{color: #0D0C22}.bg-rianseo{b
 
 
   <div class="widget-content">
-    <img alt="HSO" src="https://www2.0zz0.com/2025/03/16/04/474818126.jpg" class="sidebar-img">
+    <img alt="HSO" src="https://i.ibb.co/sJCSXzDB/IMG-20250325-154640-210.webp" class="sidebar-img">
     <h3 class="sidebar-title">
 HSO
 
@@ -225,11 +234,33 @@ HSO
 
 <a href="/courses" class="bioLink-item" style="display: block; margin-top: 20px; text-align: center; text-decoration: none;">
   <div class="bioLink-shadow"></div>
-  <span class="bioLink-text">دوراتي</span>
+  <span class="bioLink-text">من نحن</span>
 </a>
 
+<a href="/courses" class="bioLink-item" style="display: block; margin-top: 20px; text-align: center; text-decoration: none;">
+  <div class="bioLink-shadow"></div>
+  <span class="bioLink-text">سياسة الخصوصية</span>
+</a>
+
+<a href="https://t.me/PY_Hl" class="bioLink-item" style="display: block; margin-top: 40px; text-align: center; text-decoration: none;">
+  <div class="bioLink-shadow"></div>
+  <span class="bioLink-text">تليجرام</span>
+</a>
+
+<a href="https://HSO1.netlify.app" class="bioLink-item" style="display: block; margin-top: 375px; text-align: center; text-decoration: none;">
+  <div class="bioLink-shadow"></div>
+  <span class="bioLink-text">Log out</span>
+</a>
+
+
     </h3>
-    <p class="sidebar-desc">Abu Mohammed Developer Web & Design</p>
+        </h3>
+    <p class="sidebar-desc">
+    تطوير حسو ال علي
+    
+    </p>
+
+    
   </div>
 </div>
 
@@ -242,15 +273,9 @@ HSO
 
 </body>
 
-<a href="https://t.me/PY_Hl" target="_blank" class="icon-position">
+
+<a href="https://t.me/PY_Hl" class="telegram-icon-position">
   <i class="fab fa-telegram" style="font-size: 40px; color: #0088CC;"></i>
 </a>
-
-<style>
-
-</style>
-</div>
-
-
 
 </html>
