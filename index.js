@@ -100,7 +100,7 @@ loginForm.addEventListener("submit", function(e) {
     if(emailLogin.value === data.email && passwordLogin.value === data.password) {
         alert("Success")
 
-        window.location.href = "/welcome.html"
+        window.location.href = "home"
     }
 
     else {
