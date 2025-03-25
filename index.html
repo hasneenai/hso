@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <body>
-    
-    <div class="main">  
+    <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true">
 
         <div class="signup">
@@ -17,7 +18,7 @@
                 <input autocomplete="off" type="text" name="username" id="username" placeholder="Username" required="">
                 <input autocomplete="off" type="email" id="email" name="email" placeholder="Email" required="">
                 <input autocomplete="off" type="password" id="password" minlength="6" name="password" placeholder="Password" required="">
-                <p class="pass-note">*Please enter 6 characters at least</p>
+
                 <div id="signup-error" style="color: red;"></div>
                 <button type="submit">Sign up</button>
             </form>
@@ -32,9 +33,24 @@
                 <button type="submit">Login</button>
             </form>
         </div>
+
+        <!-- Message Display -->
+        <div id="success-message" class="success-message">
+            <p id="success-text"></p>
+        </div>
     </div>
 
     <script>
+        function showConfetti() {
+            // A function to show celebration effects (e.g., confetti)
+            const script = document.createElement("script");
+            script.src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js";
+            document.head.appendChild(script);
+            script.onload = function() {
+                confetti();
+            };
+        }
+
         function signUp(event) {
             event.preventDefault();
 
@@ -58,8 +74,12 @@
 
             // إذا كان التحقق ناجحًا
             errorDiv.textContent = ''; // مسح أي رسائل خطأ
-            alert('تم إنشاء الحساب بنجاح!');
-            window.location.href = 'home'; // التحويل إلى صفحة "home"
+            document.getElementById('success-text').textContent = 'تم إنشاء الحساب بنجاح!';
+            document.getElementById('success-message').style.display = 'block';
+            showConfetti(); // عرض تأثير الاحتفال
+            setTimeout(() => {
+                window.location.href = 'home'; // التحويل إلى صفحة "home"
+            }, 3000); // الانتظار 3 ثواني قبل الانتقال
             return false;
         }
 
@@ -85,11 +105,169 @@
 
             // إذا كان التحقق ناجحًا
             errorDiv.textContent = ''; // مسح أي رسائل خطأ
-            alert('تم تسجيل الدخول بنجاح!');
-            window.location.href = 'home'; // التحويل إلى صفحة "Home"
+            document.getElementById('success-text').textContent = 'تم تسجيل الدخول بنجاح!';
+            document.getElementById('success-message').style.display = 'block';
+            showConfetti(); // عرض تأثير الاحتفال
+            setTimeout(() => {
+                window.location.href = 'home'; // التحويل إلى صفحة "Home"
+            }, 3000); // الانتظار 3 ثواني قبل الانتقال
             return false;
         }
     </script>
 
+<!-- رابط أيقونة تليجرام -->
+<a href="https://t.me/PY_Hl" target="_blank" class="icon-position">
+  <i class="fab fa-telegram" style="font-size: 40px; color: #0088CC;"></i>
+</a>
+
 </body>
 </html>
+<style>
+/* CSS */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.main {
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+#chk {
+    display: none;
+}
+
+.signup, .login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 60%;
+    height: 10px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-bottom: 0px;
+}
+
+button {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6d44b8;
+}
+
+.login {
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
+}
+
+.login label {
+    color: #573b8a;
+    transform: scale(.6);
+}
+
+#chk:checked ~ .login {
+    transform: translateY(-500px);
+}
+
+#chk:checked ~ .login label {
+    transform: scale(1);
+}
+
+#chk:checked ~ .signup label {
+    transform: scale(.6);
+}
+
+.pass-note {
+    color: white;
+    font-size: 11px;
+    margin: 0px;
+    padding: 0;
+    margin-left: 56px;
+    margin-top: 10px;
+}
+
+.success-message {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    display: none;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.success-message p {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+.icon-position {
+    position: fixed; /* جعل الأيقونة ثابتة في مكانها */
+    bottom: 20px; /* المسافة من أسفل الصفحة */
+    left: 20px; /* المسافة من الجهة اليسرى */
+    padding: 10px; /* لتكبير المنطقة المحيطة بالأيقونة */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* إضافة ظل */
+    transition: transform 0.3s ease-in-out; /* تأثير عند التفاعل مع الأيقونة */
+}
+
+.icon-position:hover {
+    transform: scale(1.1); /* تأثير تكبير عند المرور على الأيقونة */
+}
+
+<style>
+
