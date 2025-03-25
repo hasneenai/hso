@@ -73,7 +73,7 @@ signupForm.addEventListener("submit", function(e) {
 
         alert("Success")
 
-        window.location.href = "/home"
+        window.location.href = "home"
     }
     
 })
