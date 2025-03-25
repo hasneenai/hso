@@ -3,36 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     
-    <div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
+    <div class="main">  
+        <input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="signup">
-				<form id="signup">
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input autocomplete="off" type="text" name="username" id="username" placeholder="Username" required="">
-					<input autocomplete="off" type="email" id="email" name="email" placeholder="Email" required="">
-					<input autocomplete="off" type="password" id="password" minlength="5" name="password" placeholder="Password" required="">
-					<p class="pass-note">*Please enter 5 characters at least</p>
-					<button>Sign up</button>
-				</form>
-			</div>
+        <div class="signup">
+            <form id="signup" onsubmit="return signUp(event)">
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input autocomplete="off" type="text" name="username" id="username" placeholder="Username" required="">
+                <input autocomplete="off" type="email" id="email" name="email" placeholder="Email" required="">
+                <input autocomplete="off" type="password" id="password" minlength="6" name="password" placeholder="Password" required="">
+                <p class="pass-note">*Please enter 6 characters at least</p>
+                <div id="signup-error" style="color: red;"></div>
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
 
-			<div class="login">
-				<form id="login">
-					<label for="chk" aria-hidden="true">Login</label>
-					<input autocomplete="off" id="email-login" type="email" name="email" placeholder="Email" required="">
-					<input autocomplete="off" id="password-login" type="password" name="password" placeholder="Password" required="">
-					<button>Login</button>
-				</form>
-			</div>
-	</div>
-   
+        <div class="login">
+            <form id="login" onsubmit="return login(event)">
+                <label for="chk" aria-hidden="true">Login</label>
+                <input autocomplete="off" id="email-login" type="email" name="email" placeholder="Email" required="">
+                <input autocomplete="off" id="password-login" type="password" name="password" placeholder="Password" required="">
+                <div id="login-error" style="color: red;"></div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
 
-    <script src="index.js"></script>
+    <script>
+        function signUp(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value;
+            const errorDiv = document.getElementById('signup-error');
+
+            // التحقق من صحة البريد الإلكتروني
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                errorDiv.textContent = 'البريد الإلكتروني غير صحيح';
+                return false;
+            }
+
+            // التحقق من طول كلمة المرور
+            if (password.length < 6) {
+                errorDiv.textContent = 'كلمة المرور يجب أن تكون 6 أحرف أو أكثر';
+                return false;
+            }
+
+            // إذا كان التحقق ناجحًا
+            errorDiv.textContent = ''; // مسح أي رسائل خطأ
+            alert('تم إنشاء الحساب بنجاح!');
+            window.location.href = 'home'; // التحويل إلى صفحة "home"
+            return false;
+        }
+
+        function login(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email-login').value;
+            const password = document.getElementById('password-login').value;
+            const errorDiv = document.getElementById('login-error');
+
+            // التحقق من صحة البريد الإلكتروني
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                errorDiv.textContent = 'البريد الإلكتروني غير صحيح';
+                return false;
+            }
+
+            // التحقق من كلمة المرور
+            if (password.length < 6) {
+                errorDiv.textContent = 'كلمة المرور يجب أن تكون 6 أحرف أو أكثر';
+                return false;
+            }
+
+            // إذا كان التحقق ناجحًا
+            errorDiv.textContent = ''; // مسح أي رسائل خطأ
+            alert('تم تسجيل الدخول بنجاح!');
+            window.location.href = 'home'; // التحويل إلى صفحة "Home"
+            return false;
+        }
+    </script>
+
 </body>
 </html>
